@@ -6,7 +6,7 @@ import (
 
 func main() {
 	var rootCmd = &cobra.Command{Use: "app"}
-	rootCmd.AddCommand(print.CmdPrint)
-	rootCmd.AddCommand(add.CmdList)
+	rootCmd.AddCommand(cmd.CmdPrint)
+	rootCmd.AddCommand(cmd.CmdList)
 	rootCmd.Execute()
 }
