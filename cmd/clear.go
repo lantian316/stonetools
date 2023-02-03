@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/spf13/cobra"
 )
@@ -37,6 +36,7 @@ func (cl *ClearCommand) runClear(cmd *cobra.Command, args []string) error {
 
 func clearContext(file string) (bool, error) {
 	print("clear")
+	return nil
 }
 
 func clearExample() string {
