@@ -45,5 +45,5 @@ func clearExample() string {
 kubecm clear
 # Customised clear lapsed files
 kubecm clear config.yaml test.yaml
-`, cfgFile)
+`)
 }
