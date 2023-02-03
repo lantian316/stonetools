@@ -47,20 +47,7 @@ func (cl *ClearCommand) runClear(cmd *cobra.Command, args []string) error {
 }
 
 func clearContext(file string) (bool, error) {
-	config, err := clientcmd.LoadFromFile(file)
-	if err != nil {
-		return false, err
-	}
-	outConfig := config.DeepCopy()
-	outConfig = CheckValidContext(true, outConfig)
-	if reflect.DeepEqual(config, outConfig) {
-		return true, nil
-	}
-	err = UpdateConfigFile(file, outConfig)
-	if err != nil {
-		return false, err
-	}
-	return false, nil
+	print("clear")
 }
 
 func clearExample() string {
