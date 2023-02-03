@@ -3,10 +3,8 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"reflect"
 
 	"github.com/spf13/cobra"
-	"k8s.io/client-go/tools/clientcmd"
 )
 
 // ClearCommand clean command struct
