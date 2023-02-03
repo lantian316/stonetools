@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/lantian316/stonetools/cmd"
 	"github.com/spf13/cobra"
 )
 
