@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/spf13/cobra"
 	"github.com/lantian316/stonetools/cmd"
+	"github.com/spf13/cobra"
 )
 
 func main() {
