@@ -14,7 +14,7 @@ type ListCommand struct {
 // Init ListCommand
 func (ll *ListCommand) Init() {
 	ll.command = &cobra.Command{
-		Use:   "clear",
+		Use:   "list",
 		Short: "Clear lapsed context, cluster and user",
 		Long:  "Clear lapsed context, cluster and user",
 		RunE: func(cmd *cobra.Command, args []string) error {
