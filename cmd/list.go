@@ -7,7 +7,7 @@ import (
 )
 
 // ListCommand clean command struct
-type LIstCommand struct {
+type ListCommand struct {
 	BaseCommand
 }
 
