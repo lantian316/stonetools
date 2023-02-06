@@ -1,13 +1,16 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/lantian316/stonetools/cmd"
-	"github.com/spf13/cobra"
 )
 
 func main() {
-	var rootCmd = &cobra.Command{Use: "app"}
-	rootCmd.AddCommand(cmd.CmdAdd)
-	rootCmd.AddCommand(cmd.CmdList)
-	rootCmd.Execute()
+	baseCommand := cmd.NewBaseCommand()
+	if err := baseCommand.CobraCmd().Execute(); err != nil {
+		_, _ = fmt.Fprintf(os.Stderr, "%s\n", err.Error())
+		os.Exit(1)
+	}
 }
