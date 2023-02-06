@@ -6,13 +6,24 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var CmdAdd = &cobra.Command{
-	Use:   "add [string to add]",
-	Short: "Add a new item",
-	Long: `Add is for adding a new item to the list.
-For many years people have added items to lists.`,
-	Args: cobra.MinimumNArgs(1),
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Adding: " + args[0])
-	},
+// AddCommand add command struct
+type AddCommand struct {
+	BaseCommand
+}
+
+
+
+// Init AddCommand
+func (ac *AddCommand) Init() {
+	ac.command = &cobra.Command{
+		Use:     "add",
+		Short:   "Add KubeConfig to $HOME/.kube/config",
+		Long:    "Add KubeConfig to $HOME/.kube/config",
+		Aliases: []string{"a"},
+		RunE: func(cmd *cobra.Command, args []string) error {
+			fmt.Println("何yh大帅比")
+			return nil
+		},
+
+	}
 }
