@@ -11,6 +11,7 @@ func NewBaseCommand() *BaseCommand {
 
 		&ClearCommand{}, // clear command
 		&ListCommand{}, // clear command
+		&CheckCertCommand{}, // clear command
 
 	)
 
