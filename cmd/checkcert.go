@@ -7,7 +7,32 @@ import (
 	"log"
 	"os"
 	"time"
+
+	"github.com/spf13/cobra"
 )
+
+
+
+// CheckCertCommand clean command struct
+type CheckCertCommand struct {
+	BaseCommand
+}
+
+// Init CheckCertCommand
+func (ccc *CheckCertCommand) Init() {
+	ccc.command = &cobra.Command{
+		Use:   "checkcert",
+		Short: "Clear lapsed context, cluster and user",
+		Long:  "Clear lapsed context, cluster and user",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			fmt.Println("checkcert start！")
+			start()
+			return nil
+		},
+	}
+
+}
+
 
 func checkCert(domain string) {
 	conn, err := tls.Dial("tcp", domain+":443", &tls.Config{})
@@ -24,7 +49,7 @@ func checkCert(domain string) {
 	}
 }
 
-func main() {
+func start() {
 	file, err := os.Open("domains.txt")
 	if err != nil {
 		log.Fatalln(err)
